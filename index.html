@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>USGS Recent Earthquakes</title>
+    <script>
+        var dojoConfig = {
+            has: {
+                "esri-native-promise": true
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="preload" href="https://js.arcgis.com/4.12/esri/themes/light/main.css" as="style">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/themes/light/main.css">
+    <link rel="preload" href="https://js.arcgis.com/4.12/" as="script">
+    <link rel="preload" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson" as="fetch">
+    <script defer src="https://js.arcgis.com/4.12/"></script>
+    <script defer src="../dist/main.js"></script>
+    <link rel="stylesheet" href="./styles/style-min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="mapDiv"></div>
+        <div id="select-wrapper" class="select">
+            <label for="select" class="select">Earthquake Magnitude</label>
+            <select id="select" class="select">
+                <option value="0">All Earthquakes</option>
+                <option value="1">Magnitude 1+</option>
+                <option value="2.5">Magnitude 2.5+</option>
+                <option value="4.5">Magnitude 4.5+</option>
+                <option value="6">Significant Earthquakes</option>
+            </select>
+        </div>
+    </div>
+</body>
+
+</html>
